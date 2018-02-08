@@ -1,0 +1,108 @@
+<%# <div class="jumbotron"> %>
+<%#   <h2><%= gettext "Welcome to %{name}!", name: "Phoenix" %1></h2> %>
+<%#   <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p> %>
+<%# </div> %>
+
+<%# <div class="row marketing"> %>
+<%#   <div class="col-lg-6"> %>
+<%#     <h4>Resources</h4> %>
+<%#     <ul> %>
+<%#       <li> %>
+<%#         <a href="http://phoenixframework.org/docs/overview">Guides</a> %>
+<%#       </li> %>
+<%#       <li> %>
+<%#         <a href="https://hexdocs.pm/phoenix">Docs</a> %>
+<%#       </li> %>
+<%#       <li> %>
+<%#         <a href="https://github.com/phoenixframework/phoenix">Source</a> %>
+<%#       </li> %>
+<%#     </ul> %>
+<%#   </div> %>
+
+<%#   <div class="col-lg-6"> %>
+<%#     <h4>Help</h4> %>
+<%#     <ul> %>
+<%#       <li> %>
+<%#         <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a> %>
+<%#       </li> %>
+<%#       <li> %>
+<%#         <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a> %>
+<%#       </li> %>
+<%#       <li> %>
+<%#         <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a> %>
+<%#       </li> %>
+<%#     </ul> %>
+<%#   </div> %>
+<%# </div> %>
+
+
+<div class="ui container" style="margin-top: 2rem" id="index_page">
+  <div class="ui grid">
+    <div class="sixteen wide column">
+      <div class="ui grid">
+        <div class="two wide column">
+        </div>
+        <div class="twelve wide column">
+          <div class="ui  segment">
+            <%= form_for @changeset, page_path(@conn, :create), [class: "ui form"], fn f -> %>
+              <div class="ui error message">
+                <ul class="list">
+                  <li>Please check your inputs.</li>
+                </ul>
+              </div>
+              <br>
+              <div class="field">
+                <label>Name:</label>
+                <%= text_input f, :name, placeholder: "Enter name" %>
+                <%= error_tag f, :name %>
+              </div>
+              <div class="field">
+                <label for="description">Description:</label>
+                <%= text_input f, :description, placeholder: "Enter description" %>
+                <%= error_tag f, :description %>
+              </div>
+              <div class="field" style="text-align: center">
+                <button type="submit" class="ui button primary">
+                  <i class='send icon'></i> Submit
+                </button>
+                <a class="ui button default" id="clear"><i class='refresh icon'></i> Clear</a>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sixteen wide column">
+      <%# <hr /> %>
+    </div>
+    <div class="sixteen wide column" style="max-height: 400px; overflow: auto;border: #ccc solid 2px">
+      <h1 style="text-align:center">Items</h1>
+      <table class="ui celled table">
+        <thead>
+          <tr>
+            <th width="38%">Name</th>
+            <th width="38%">Description</th>
+            <th width="24%"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= for i <- @items do %>
+            <tr>
+              <td><%= i.name %></td>
+              <td><%= i.description %></td>
+              <td>
+                <a class="ui button primary" href="#!" id="<%= i.id %>">
+                  <i class="edit icon"></i> Edit
+                </a>
+                <a class="ui button negative" href="#!" id="<%= i.id %>">
+                  <i class="trash icon"></i>
+                  Delete
+                </a>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
