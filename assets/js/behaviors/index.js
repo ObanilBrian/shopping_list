@@ -4,27 +4,35 @@ onmount('#index_page', function () {
     $('input[name="item[description]"]').val('')
   })
 
-  // $('.ui.form')
-  // .form({
-  //   fields: {
-  //     'item[name]': {
-  //       identifier: 'item[name]',
-  //       rules: [
-  //         {
-  //           type   : 'empty',
-  //           prompt : 'Please enter your name'
-  //         }
-  //       ]
-  //     },
-  //     'item[description]': {
-  //       identifier: 'item[description]',
-  //       rules: [
-  //         {
-  //           type   : 'empty',
-  //           prompt : 'Please enter your description'
-  //         }
-  //       ]
-  //     }
-  //   }
-  // })
-});
+  $('.ui.form')
+  .form({
+    fields: {
+      'item[name]': {
+        identifier: 'item[name]',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : 'Please enter your name'
+          }
+        ]
+      },
+      'item[description]': {
+        identifier: 'item[description]',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : 'Please enter your description'
+          }
+        ]
+      }
+    }
+  })
+})
+
+onmount('#samsung', function () {
+$('#hamburger').click(function(){
+  $('.ui.sidebar').sidebar('toggle')
+})
+
+})
+

@@ -30,6 +30,15 @@ defmodule SampleWeb.PageController do
     end
   end
 
+  def samsung(conn, _) do
+     render conn, "samsung.html"
+  end
+
+
+  def add_phone(conn, _) do
+     render conn, "add_phone.html"
+  end
+
   def insert_item(item) do
     %Item{}
     |> Item.changeset(item)
