@@ -1,0 +1,28 @@
+body {
+  background: #cccccc;
+}
+
+span {
+ color: red;
+}
+
+p {
+  span {
+    color: blue;
+  }
+}
+#pagin {
+ float:middle;
+ text-align:center;
+}
+#input_samp {
+  margin-left:30%;
+}
+
+.desc {
+  text-align:right;
+}
+
+td.input {
+  float:left;
+}

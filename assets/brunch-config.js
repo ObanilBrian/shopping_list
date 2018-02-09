@@ -29,7 +29,7 @@ exports.config = {
                 "css/app.css": [
                   "vendor/semantic/dist/**",
                   "vendor/css/**",
-                  "css/index.css"
+                  "css/**"
                 ],
             },
         },

@@ -27,4 +27,12 @@ onmount('#index_page', function () {
       }
     }
   })
-});
+})
+
+onmount('#samsung', function () {
+$('#hamburger').click(function(){
+  $('.ui.sidebar').sidebar('toggle')
+})
+
+})
+
