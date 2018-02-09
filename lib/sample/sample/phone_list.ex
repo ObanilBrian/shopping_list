@@ -8,14 +8,14 @@ defmodule Sample.Schemas.PhoneList do
   schema ":phone_lists" do
     field :description, :string
     field :name, :string
-    field :url, :sring
+    field :url, :string
 
     timestamps()
   end
 
   @doc false
-  def changeset(%Item{} = item, attrs) do
-    item
+  def changeset(%PhoneList{} = phone_list, attrs) do
+    phone_list
     |> cast(attrs, [:name, :description])
     |> validate_required([:name, :description])
   end
