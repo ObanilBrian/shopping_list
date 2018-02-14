@@ -31,8 +31,8 @@
               <i class="big  sidebar icon"></i>
             </a>
             <h2 class="ui center aligned icon header">
-              <i class="circular shopping bag icon"></i>
-              Shopping List
+              <%#  <i class="circular shopping bag icon"></i> %>
+              Phone List
             </h2>
           </div>
         </header>

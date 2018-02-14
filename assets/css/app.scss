@@ -20,9 +20,21 @@ p {
 }
 
 .desc {
-  text-align:right;
+
 }
 
 td.input {
   float:left;
 }
+
+.new_img {
+  width: 80% !important;
+}
+.search{
+  text-align: -webkit-right;
+  padding-right: 0!important;
+  margin-left: 5.2%!important;
+  display:flex!important;
+}
+
+

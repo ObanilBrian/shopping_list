@@ -20,6 +20,10 @@ defmodule SampleWeb.Router do
     post "/", PageController, :create
     get "/samsung", PageController, :samsung
     get "/addphone", PageController, :add_phone
+    post "/addphone", PageController, :create_phone
+    get "/:id/editphone", PageController, :edit_phone
+    put "/:id/editphone", PageController, :update_phone
+    delete "/:id/samsung", PageController, :delete_phone
   end
 
   # Other scopes may use custom stacks.

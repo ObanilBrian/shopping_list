@@ -1,12 +1,7 @@
-<%= form_for @changeset, page_path(@conn, :create_phone), [class: "ui form"], fn f -> %>
+<%= form_for @changeset, page_path(@conn, :update_phone, @phone_list), [class: "ui form"], fn f -> %>
   <div class="ui grid" id="add_phone">
     <div class="four wide column"></div>
     <div class="four wide column">
-      <div class="ui error message">
-        <ul class="list">
-          <li>Please check your inputs.</li>
-        </ul>
-      </div>
       <table class="ui celled table">
         <thead>
           <tr>
@@ -44,16 +39,17 @@
     </div>
     <div class="six wide column">
       <div class="image">
-        <img class="new_img"  src="" id="phone_img">
+        <img class="new_img"  src="<%= @phone_list.url %>" id="phone_img">
       </div>
     </div>
   </div>
   <div class="ui grid" style="text-align:center; display:block">
     <button type="submit" class="ui primary button">
-     <i class="send icon"></i> Save
+      Save
     </button>
-    <button class="ui button">
-      Discard
-    </button>
-  </div>
+
 <%end%>
+    <a href="../samsung.html"> <button class="ui button">
+      Cancel
+  </button></a>
+  </div>
