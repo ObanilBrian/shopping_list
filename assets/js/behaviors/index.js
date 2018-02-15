@@ -29,10 +29,46 @@ onmount('#index_page', function () {
   })
 })
 
-onmount('#samsung', function () {
-$('#hamburger').click(function(){
-  $('.ui.sidebar').sidebar('toggle')
+onmount('#samsung', function() {
+  $('#hamburger').click(function(){
+    $('.ui.sidebar').sidebar('toggle')
+  })
+
+  $('.delete_phone').click(function(){
+    let id = $(this).attr('phoneId')
+    let name = $(this).attr('phoneName')
+    let url = $(this).attr('phoneUrl')
+    let description = $(this).attr('phoneDesc')
+
+    $('#phone_id').text(`${id}`)
+    $('#phone_name').text(`${name}`)
+    $('#phone_url').attr(`src`,`${url}`)
+    $('#phone_desc').text(`${description}`)
+     $('.ui.modal').modal('show')
+ })
+
+$('#btnDelete').click(function(){
+    let phone_id = $('#phone_id').text()
+    let csrf = $('input[name="_csrf_token"]').val();
+    $.ajax({
+      url:`/${phone_id}/samsung`,
+      headers: {"X-CSRF-TOKEN": csrf},
+      type: 'DELETE',
+      success: function(response){
+        location.reload()
+      // alertify.success('<i class="close icon"></i>Success')
+      }
+    });
+})
 })
 
+
+onmount('#add_phone', function() {
+
+
+  $('input[name="phone_list[url]"]').focusout(function(){
+    let value = $(this).val()
+    $('#phone_img').attr('src', value)
+  })
 })
 
